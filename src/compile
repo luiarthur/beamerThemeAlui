@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# -s        =>  create standalone file (in this case report.tex latex file)
+# --toc     =>  create table of contents
+# --natbib  =>  use the natbib package in latex
+# -o        =>  output file name
+
+#pandoc *.md -t beamer -s -o out.tex
+#pandoc *.md -t beamer --natbib -s -o out.tex
+pandoc *.md -t beamer -V theme:alui --natbib -s -o out.tex
+#pandoc *.md -t beamer --natbib -s -o out.tex
+
+
+pdflatex *.tex 
+bibtex *.aux
+pdflatex *.tex
+pdflatex *.tex
+rm -f *.{log,aux,nav,out,snm,toc,bbl,blg}
+rm -f *.tex
