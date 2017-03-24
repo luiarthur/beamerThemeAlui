@@ -27,6 +27,8 @@
 \def\mydarkcolor{\color{pumpkin}} % Figure Color.   CHANGE THIS!
 \setbeamercolor{itemize item}{fg=\mylitecolor}
 \setbeamercolor{enumerate item}{fg=\mylitecolor}
+\setbeamercolor{enumerate subitem}{fg=\mylitecolor}
+\setbeamercolor{enumerate subsubitem}{fg=\mylitecolor}
 \setbeamercolor{itemize subitem}{fg=\mylitecolor}
 \setbeamercolor{itemize subsubitem}{fg=\mylitecolor}
 \setbeamercolor{title}{fg=\mylitecolor}
@@ -41,7 +43,7 @@
 
 \DeclareCaptionFont{figcol}{\mydarkcolor} % color of the word Figure: in figure captions
 \captionsetup{ font=scriptsize,
-               labelfont={bf,figcol,scriptsize}} %,textfont={black} }
+               labelfont={bf,figcol,scriptsize} } %,textfont={black} }
 \def\hline{ \textcolor{grey}{\hrulefill}\\ }
 
 
@@ -52,10 +54,14 @@
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}{
   \hbox{
-    \hspace{-.16cm}
-    \begin{beamercolorbox}[ht=2mm,dp=1mm,rightskip=.3cm]{footlinecolor} \insertauthor\hfill \insertshorttitle\hfill \insertframenumber/\inserttotalframenumber
+    \hspace{-.15cm}
+    \begin{beamercolorbox}[ht=2mm,dp=1mm,
+                           rightskip=.1cm,leftskip=.1cm]{footlinecolor} 
+      \insertshortauthor\hfill
+      \insertshorttitle\hfill
+      \insertframenumber/\inserttotalframenumber
     \end{beamercolorbox}
-        }
-      } % end of footline 
+  } % end of hbox
+} % end of footline 
 
 \mode<all>
